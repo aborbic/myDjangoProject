@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% block content %}
+{% if user.is_authenticated %}
+{% include 'base2.html' %}
+{% else %}
+{% include 'base.html' %}
+{% endif %}
+<h1>Successfully Uploaded!</h1>
+</body>
+</html>

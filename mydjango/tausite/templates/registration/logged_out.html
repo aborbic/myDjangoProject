@@ -1,0 +1,10 @@
+
+{% block content %}
+{% if user.is_authenticated %}
+{% include 'base2.html' %}
+{% else %}
+{% include 'base.html' %}
+{% endif %}
+  <p>Logged out!</p>  
+  <a href="{% url 'login'%}">Click here to login again.</a>
+{% endblock %}

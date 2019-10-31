@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>To Do Detail Page</title>
+</head>
+<body>
+{% block content %}
+{% if user.is_authenticated %}
+{% include 'base2.html' %}
+{% else %}
+{% include 'base.html' %}
+{% endif %}
+    <p>{{Announcement.title}}</p>
+      <ul>
+        <li>Description : {{Announcement.description}}</li>
+        <li>Date : {{Announcement.date}}</li>
+      </ul>
+{% endblock content%}
+</body>
+</html>

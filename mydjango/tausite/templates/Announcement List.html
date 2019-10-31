@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List Page</title>
+</head>
+<body>
+{% block content %}
+{% if user.is_authenticated %}
+{% include 'base2.html' %}
+{% else %}
+{% include 'base.html' %}
+{% endif %}
+<p>All Announcements List</p>
+<ul>
+    {% for Announcement in Announcements %}
+    <li><a href="/tausite/show_detail/{{Announcement.id}}">Title: {{Announcement.title}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock content%}
+</body>
+</html>

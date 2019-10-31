@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Picture_image</title>
+</head>
+<body>
+{% block content %}
+{% if user.is_authenticated %}
+{% include 'base2.html' %}
+{% else %}
+{% include 'base.html' %}
+<h1>Please Sign In To Make Changes</h1>
+{% endif %}
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+{% endblock content %}
+</body>
+</html>

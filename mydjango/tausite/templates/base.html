@@ -1,0 +1,14 @@
+<!-- The url tag's parameter format is app_name:url_mapping_name(defined in app's urls.py file.) -->
+<nav>
+    <div class="nav-wrapper">
+      <a href="{% url 'tausite:home' %}" class="brand-logo">Home Page</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <li><a href="{% url 'tausite:Announcement List' %}" >List of Announcements</a></li>
+            <li><a href="{% url 'tausite:image_upload' %}" >Picture Upload</a></li>
+            <li><a href="{% url 'tausite:picture_images' %}" >View Pictures</a></li>
+            <li><a href="{% url 'login' %}" >Login</a></li>
+      </ul>
+    </div>
+  </nav>
+<br/><br/>
+{% block content %}{% endblock content%}
