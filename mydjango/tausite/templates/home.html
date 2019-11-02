@@ -15,20 +15,23 @@
     <title>Home Page</title>
 </head>
 <body>
-<!-- extends the parent template file -->
-{% block content %}
-{% if user.is_authenticated %}
-{% include 'base2.html' %}
-<h1 class="displayName">Welcome {{user.get_username}}</h1>
-{% else %}
-{% include 'base.html' %}
-{% endif %}
-{% for homes in home %}
-<h1>{{homes.homeTitle}}</h1>
-<p>{{homes.homeDesc}}</p>
-<p>{{homes.homeDate}}</p>
-{% endfor %}
-{% endblock content%}
+<div class="backgroundColor">
+    <!-- extends the parent template file -->
+    {% block content %}
+    {% if user.is_authenticated %}
+    {% include 'base2.html' %}
+    <!--<h3 class="displayName">Welcome {{user.get_username}}</h3>-->
+    {% else %}
+    {% include 'base.html' %}
+    {% endif %}
+    {% for homes in home %}
+    <h3 class="title">{{homes.homeTitle}}</h3>
+    <p class="description">{{homes.homeDesc}}</p>
+    <p class="date">{{homes.homeDate}}</p>
+    {% endfor %}
+    {% include 'footer.html' %}
+    {% endblock content%}
+</div>
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!--Loaded in Custom JS-->
