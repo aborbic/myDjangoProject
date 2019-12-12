@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
+        {% load static %}
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import selected dancing script font-->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Import Custom Css-->
+    <link rel="stylesheet" href="{% static 'css/image_upload.css' %}">
+    <!-- Loading Jquery at the top for the Drop down -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Picture_image</title>
 </head>
-<body>
+<body class="backgroundColor">
 {% block content %}
 {% if user.is_authenticated %}
 {% include 'base2.html' %}
 {% else %}
 {% include 'base.html' %}
-<h1>Please Sign In To Make Changes</h1>
+<h3 class="title">Please Sign In To Make Changes</h3>
 {% endif %}
+<h3 class="title">Upload an image for everyone to see!</h3>
+<p class="description">Note: All images should be official</p>
     <form method = "post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Upload</button>
     </form>
 {% endblock content %}
+{% include 'footer.html' %}
 </body>
 </html>
