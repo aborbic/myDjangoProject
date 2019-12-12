@@ -1,0 +1,50 @@
+ .backgroundColor {
+background-color: rgb(255, 220, 0);
+}
+body {
+/* This incorporates the google font */
+font-family: 'Dancing Script', cursive;
+}
+.title {
+text-align: center;
+color: rgb(26, 35, 126);
+}
+.description, .date{
+text-align: center;
+line-height: 1.6;
+color: rgb(26, 35, 126);
+font-weight: bold;
+font-size: 24px;
+}
+.nav-wrapper{
+background-color: rgb(26, 35, 126);
+}
+.displayName {
+text-align: center;
+}
+ .input-field input:focus + label {
+   color: rgb(26,36, 126) !important;
+   font-size: 22px !important;
+   font-weight: bold !important;
+ }
+  .row .input-field input:focus .textArea {
+   border-bottom: 1px solid blue !important;
+   box-shadow: 0 1px 0 0 blue !important
+ }
+ .recipientTitle {
+font-weight: bold !important;
+ font-size: 22px !important;
+ color: rgb(26, 36, 126) !important;
+ padding-bottom: 10px !important;
+ }
+ .recipientEmailText {
+ color: rgb(26, 36, 126) !important;
+ }
+ .textArea {
+ font-weight: bold !important;
+ font-size: 22px !important;
+ color: rgb(26, 36, 126) !important;
+ }
+ .submitBtn {
+ color: rgb(26, 36, 126) !important!
+ }
